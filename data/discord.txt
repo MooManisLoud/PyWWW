@@ -1,0 +1,25 @@
+# Dont delete this is a discord RPC
+# PyWWW.py is using code to get the code from here into the code
+
+from pypresence import Presence
+import time
+
+client_id = "1088908938205999194"
+RPC = Presence(client_id)
+
+RPC.connect()
+
+large_image_key = "bigimage"
+large_image_text = "PyDownloader"
+
+button1 = {"label": "GitHub", "url": "https://github.com/MooManisLoud/PyWWW"}
+
+while True:
+    RPC.update(
+        state="On GitHub",
+        details="Download faster with PyWWW",
+        large_image=large_image_key,
+        large_text=large_image_text,
+        buttons=[button1]
+    )
+    time.sleep(15) # update every 15 seconds

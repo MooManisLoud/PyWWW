@@ -1,0 +1,5 @@
+pyfiglet
+pypresence
+pyinstaller
+keyboard
+pygame
