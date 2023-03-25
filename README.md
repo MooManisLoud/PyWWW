@@ -27,7 +27,7 @@ pip install keyboard
 pip install pygame
 ```
 
-<font size="7" face="Arial">Pyfiglet Not Working.</font>
+<font size="7" face="Arial">Pyfiglet Not Working</font>
 
 <font size="4" face="Arial">It may not work because you may of pip installed it in the wrong path, it needs to be installed using:</font>
 
