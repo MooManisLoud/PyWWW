@@ -3,3 +3,7 @@ pypresence
 pyinstaller
 keyboard
 pygame
+requests
+discord
+github
+tqdm

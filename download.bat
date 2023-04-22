@@ -13,7 +13,6 @@ if errorlevel 1 (
         exit /b 1
 )
 
-
 pip install -r requirements.txt
 
 pause

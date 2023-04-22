@@ -1,0 +1,20 @@
+# Dont delete this is a discord RPC
+# PyWWW.py is using code to get the code from here into the code
+
+from pypresence import Presence
+import time
+import threading
+
+def run_discord_rpc():
+client_id = '1088908938205999194'
+RPC = Presence(client_id)
+RPC.connect()
+button1 = {"label": "GitHub", "url": "https://github.com/MooManisLoud/PyWWW"}
+RPC.update(state="On GitHub", details="Download faster with PyWWW", large_image="bigimage", large_text="Pyinstaller", buttons=[button1], start=time.time())
+while True:
+    time.sleep(15)
+	DiscordRPC.run()
+
+
+	discord_thread = threading.Thread(target=run_discord_rpc)
+	discord_thread.start()

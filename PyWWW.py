@@ -5,16 +5,51 @@ import time
 import pyfiglet
 import sys
 import subprocess
+import requests
+import datetime
+import getpass
+from keyboard import press
+import threading
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __author__ = "Moo Man"
 __name__ = "PyWWW"
+__logfile__ = "log/mylog.txt"
+logo_text = pyfiglet.figlet_format(__name__, font="slant", width=80, justify="center")
+__user__ = getpass.getuser()
 
-with open("data/discord.txt", "r") as f:
-    code = f.read()
-    exec(code)
+# with open("plugins\discordrpc\source\ThirdParty\DiscordRpcLibrary\Include\discord.txt", "r") as f:
+#    code = f.read()
+#    exec(code)
 
-print("Thank you for using", __name__)
+os.system("cls" if os.name == "nt" else "clear")
+
+if os.name == "nt":
+    os.system("title PyWWW")
+else:
+    print("\033]0;PyWWW\007")
+
+print(logo_text)
+print("PyWWW is experiencing some technical difficulties with code and could overwrite files, dont name the file the same as anther file that is important overwriting deletes the file.")
+print("")
+print(" ")
+wtc = input("Are you sure you want to continue? (Y/N): ")
+
+if wtc.lower() == "y":
+    os.system("cls" if os.name == "nt" else "clear")
+else:
+    os.system('taskkill /IM python.exe /F')
+
+    log_file = open(__logfile__, "a")
+
+    log_file.write(str(datetime.datetime.now()) + "\n")
+
+    log_file.write("PyWWW has seemed to have crashed or has been asked to close by another process\n")
+    log_file.write("\n")
+
+    log_file.close()
+
+print(logo_text)
 print(" ")
 print("Created by:", __author__)
 print("Version:", __version__)
@@ -30,30 +65,44 @@ for i in range(total_iterations):
 
     progress = (i + 1) / total_iterations * 100
     
-    loading_message = f"Loading... {progress:.1f}%"
+    loading_message = f"{progress:.1f}%"
     
     print(loading_message, end="\r")
     time.sleep(0.5)
 
 os.system("cls" if os.name == "nt" else "clear")
 
-big_text = pyfiglet.figlet_format(__name__, font="slant", width=80, justify="center")
+logo_text = pyfiglet.figlet_format(__name__, font="slant", width=80, justify="center")
 
-print(big_text)
+print(logo_text)
 
+print("")
 
-url = input("Enter the URL to download: ")
-file_name = os.path.basename(url)
-save_path = input("Enter the path to save the file to: ")
+print("[1] Info | [2] PyInjector | [3] Coming Soon")
+print("")
 
-# Create the save directory if it doesn't exist
-if not os.path.exists(save_path):
-    os.makedirs(save_path)
+while True:
+    number = input("Pick a number (or 'q' to quit): ")
+    
+    if number == "q":
+        break
+    
+    if number == "1":
+        print("Version =", __version__)
+        print("Creator =", __author__)
+        print("Name =", __name__)
+        print("File =", __file__)
+        os.system("echo.")
+    input("")
+    press("enter")
 
-file_path = os.path.join(save_path, file_name)
+    if number == "2":
+        os.system("pip install pyinjector")
+        os.system("pip install injector")
+        print("Injector is being worked on!")
+        input("")
+        break
 
-# Download the file
-urllib.request.urlretrieve(url, file_path)
-
-python = sys.executable
-os.execl(python, python, *sys.argv)
+    if number == "3":
+        print("Coming Soon")
+        break
