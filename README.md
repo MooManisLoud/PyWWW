@@ -19,7 +19,7 @@
 
 <font size="4" face="Arial">In the folder where the files are there is a download.bat that is used for downloading the files, if you want to download them here</font>
 
-```
+```python
 pip install pyfiglet
 pip install pypresence
 pip install pyinstaller
